@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Table, Button, Row, Col } from 'antd';
+import { Table, Button, Row, Col, Layout } from 'antd';
 import moment from 'moment';
 import qs from 'qs';
 import { UsersSearch } from '../Users';
 import { apiCall } from '../../actions';
 import { methods, user, endpoints } from '../../constants';
+
+const {  Content, Sider } = Layout;
 
 export class UsersList extends Component {
 
@@ -104,23 +106,27 @@ export class UsersList extends Component {
       onChange: this.onSelectChange,
     };
     return (
-      <div className='content__wrapper'>
+      <Layout>
+        <Sider width={250} >
+          <UsersSearch 
+            request={this.handleFilterRequest} 
+            data={users} 
+            filters={this.state.filters}
+            addFilter={this.handleAddFilter}
+          />
+        </Sider>
 
-        <Row type={'flex'} justify={'center'}>
-          <Col span={20}>
-            <UsersSearch request={this.handleFilterRequest} data={users} filters={this.state.filters}
-                         addFilter={this.handleAddFilter}/>
-          </Col>
-        </Row>
-
-        <Row type={'flex'} justify={'center'}>
-          <Col span={20}>
-            <Table rowKey={record => record.name} rowSelection={rowSelection} columns={columns}
-                   dataSource={users}/>
-          </Col>
-        </Row>
-
-      </div>
+        <Layout>
+          <Content style={{ background: '#fff' }}>
+            <Table 
+              rowKey={record => record.name} 
+              rowSelection={rowSelection} 
+              columns={columns}
+              dataSource={users}
+            />
+          </Content>
+        </Layout>
+      </Layout>
     );
   }
 }

@@ -1,19 +1,39 @@
 @import "../../less/variables";
 
+.ant-layout-sider {
+  background-color: transparent !important;
+}
+
 .search-block {
   width: 100%;
-  padding: 15px 0 20px;
+  padding: 15px 20px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
   &__item {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    align-content: stretch;
+
+    .ant-select {
+      width: 100%;
+    }
+
+    .ant-btn {
+      margin-top: 20px;
+      width: 100%;
+    }
   }
 }
 
 .filters {
   width: 100%;
+}
 
+.ant-table-pagination {
+  margin-right: 55px !important;
 }

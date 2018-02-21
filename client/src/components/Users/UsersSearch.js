@@ -42,7 +42,6 @@ class UsersSearch extends Component {
           <Select
             mode='tags'
             placeholder='Industry'
-            style={{ width: '200px' }}
             value={filters.industry}
             onChange={(value) => this.handleChange(value, 'industry')}>
             {industry}
@@ -53,7 +52,6 @@ class UsersSearch extends Component {
             mode='tags'
             placeholder='Location'
             value={filters.location}
-            style={{ width: '200px' }}
             onChange={(value) => this.handleChange(value, 'location')}>
             {location}
           </Select>
@@ -62,7 +60,6 @@ class UsersSearch extends Component {
           <Select
             mode='tags'
             placeholder='Job Title'
-            style={{ width: '200px' }}
             value={filters.jobTitle}
             onChange={(value) => this.handleChange(value, 'jobTitle')}>
             {jobTitle}
