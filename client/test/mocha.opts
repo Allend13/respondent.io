@@ -1,0 +1,6 @@
+--require babel-core/register
+--require ignore-styles test/setup.js
+--reporter spec
+--timeout 2000
+--colors
+--exit
