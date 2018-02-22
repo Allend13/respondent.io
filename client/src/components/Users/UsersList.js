@@ -105,6 +105,7 @@ export class UsersList extends Component {
       selectedRowKeys,
       onChange: this.onSelectChange,
     };
+
     return (
       <Layout>
         <Sider width={250} >
@@ -123,6 +124,7 @@ export class UsersList extends Component {
               rowSelection={rowSelection} 
               columns={columns}
               dataSource={users}
+              loading={isFetching}
             />
           </Content>
         </Layout>
