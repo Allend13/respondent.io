@@ -7,5 +7,4 @@ export default combineReducers({
   app: appReducer,
   user: userReducer,
   usersList: usersListReducer,
-
 });

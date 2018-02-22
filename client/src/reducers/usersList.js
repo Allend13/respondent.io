@@ -23,6 +23,8 @@ export default (reducerState = initialState, action) => {
     case user.filter + START:
       return {
         ...reducerState,
+        data: [],
+        isReady: false,
         isFetching: true,
       };
     case user.filter + SUCCESS:
